@@ -5,6 +5,9 @@ locals {
       version         = "3.6.0"
       versionProtocol = "3.6"
       replicas        = 3
+      storage = {
+        size = "5Gi"
+      }
       topic = {
         name       = "test"
         partitions = 1
