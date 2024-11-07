@@ -4,14 +4,14 @@ locals {
       name            = "edh"
       version         = "3.6.0"
       versionProtocol = "3.6"
-      replicas        = 3
+      replicas        = 1
       storage = {
         size = "5Gi"
       }
       topic = {
         name       = "test"
         partitions = 1
-        replicas   = 3
+        replicas   = 1
         retention  = 7200000
       }
     }
