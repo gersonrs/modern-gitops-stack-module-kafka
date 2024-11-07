@@ -7,6 +7,11 @@ metadata:
     {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
 spec:
   kafka:
+    template:
+        persistentVolumeClaim:
+          metadata:
+            annotations:
+              argocd.argoproj.io/sync-options: Prune=false
     version: {{ .Values.kafka.version }}
     replicas: {{ .Values.kafka.replicas }}
     listeners:
@@ -60,6 +65,11 @@ spec:
           name: kafka-metrics
           key: kafka-metrics-config.yml
   zookeeper:
+    template:
+        persistentVolumeClaim:
+          metadata:
+            annotations:
+              argocd.argoproj.io/sync-options: Prune=false
     replicas: {{ .Values.kafka.replicas }}
     storage:
       type: persistent-claim
