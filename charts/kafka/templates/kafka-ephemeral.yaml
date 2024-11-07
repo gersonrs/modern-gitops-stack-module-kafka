@@ -12,6 +12,8 @@ spec:
           metadata:
             annotations:
               argocd.argoproj.io/sync-options: Prune=false
+              argocd.argoproj.io/sync-options: Validate=false
+              argocd.argoproj.io/sync-options: Delete=false
     version: {{ .Values.kafka.version }}
     replicas: {{ .Values.kafka.replicas }}
     listeners:
@@ -70,6 +72,8 @@ spec:
           metadata:
             annotations:
               argocd.argoproj.io/sync-options: Prune=false
+              argocd.argoproj.io/sync-options: Validate=false
+              argocd.argoproj.io/sync-options: Delete=false
     replicas: {{ .Values.kafka.replicas }}
     storage:
       type: persistent-claim
