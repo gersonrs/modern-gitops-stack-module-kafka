@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.8.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.7.0...v2.8.0) (2025-01-18)
+
+
+### 🚀 New Features
+
+* add persistence ([6818fd4](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/6818fd45908079cce7e70f278965322c84e7f1aa))
+* add persistent annotations ([afc5839](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/afc58391f195e3f50820f3bf231c13351dffd142))
+* add persistent annotations ([063a97d](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/063a97dc8771cd35c18423722f4766fa71e521ec))
+* add persistent annotations ([c89810d](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/c89810daf9793aaa61408a7f8aaa627bce814c0a))
+* add persistent annotations ([2c81aad](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/2c81aad1a35ae8afe0b816b1a267da6b33dc0bfb))
+* adjust replicas ([004bd25](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/004bd257d8fc578812689d3f96bbece010d3b178))
+
 ## [2.7.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.6.0...v2.7.0) (2024-08-19)
 
 
