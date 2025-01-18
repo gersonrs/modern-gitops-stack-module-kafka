@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.9.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.8.0...v2.9.0) (2025-01-18)
+
+
+### 🚀 New Features
+
+* adjust and update project ([c30ced7](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/c30ced73cdfd5a23c2c492d3cc2f80d65161400f))
+* remove unused workflow ([983d2ec](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/983d2ec6f1dd32eaf442904e5e7ec68c47a641bd))
+
 ## [2.8.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.7.0...v2.8.0) (2025-01-18)
 
 
