@@ -185,8 +185,8 @@ Description: kafka broker name
 |===
 |Name |Version
 |[[provider_null]] <<provider_null,null>> |>= 3
-|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 5
+|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |===
 
 = Resources

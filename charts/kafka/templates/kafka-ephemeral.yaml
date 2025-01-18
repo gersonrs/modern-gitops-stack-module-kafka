@@ -54,11 +54,11 @@ spec:
         deleteClaim: false
     resources:
       requests:
-        memory: 256Mi
-        cpu: "250m"
+        memory: {{ .Values.kafka.resources.kafka.requests.memory }}
+        cpu: {{ .Values.kafka.resources.kafka.requests.cpu }}
       limits:
-        memory: 512Mi
-        cpu: "500m"
+        memory: {{ .Values.kafka.resources.kafka.limits.memory }}
+        cpu: {{ .Values.kafka.resources.kafka.limits.cpu }}
     metricsConfig:
       type: jmxPrometheusExporter
       valueFrom:
@@ -85,11 +85,11 @@ spec:
       timeoutSeconds: 5
     resources:
       requests:
-        memory: 256Mi
-        cpu: "250m"
+        memory: {{ .Values.kafka.resources.zookeeper.requests.memory }}
+        cpu: {{ .Values.kafka.resources.zookeeper.requests.cpu }}
       limits:
-        memory: 512Mi
-        cpu: "500m"
+        memory: {{ .Values.kafka.resources.zookeeper.limits.memory }}
+        cpu: {{ .Values.kafka.resources.zookeeper.limits.cpu }}
     metricsConfig:
       type: jmxPrometheusExporter
       valueFrom:
