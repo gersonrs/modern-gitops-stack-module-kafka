@@ -80,3 +80,51 @@ variable "dependency_ids" {
   type        = map(string)
   default     = {}
 }
+
+variable "kafka_name" {
+  description = "Name of the kafka broker"
+  type        = string
+  default     = "edh"
+  nullable    = false
+}
+
+
+variable "replicas" {
+  description = "Number of replicas for module"
+  type        = number
+  default     = 3
+}
+
+variable "resources" {
+  description = <<-EOT
+    Resource limits and requests for module components. Follow the style on https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/[official documentation] to understand the format of the values.
+
+    IMPORTANT: These are not production values. You should always adjust them to your needs.
+  EOT
+  type = object({
+
+    kafka = optional(object({
+      requests = optional(object({
+        cpu    = optional(string, "250m")
+        memory = optional(string, "256Mi")
+      }), {})
+      limits = optional(object({
+        cpu    = optional(string, "500m")
+        memory = optional(string, "512Mi")
+      }), {})
+    }), {})
+
+    zookeeper = optional(object({
+      requests = optional(object({
+        cpu    = optional(string, "50m")
+        memory = optional(string, "128Mi")
+      }), {})
+      limits = optional(object({
+        cpu    = optional(string)
+        memory = optional(string, "128Mi")
+      }), {})
+    }), {})
+
+  })
+  default = {}
+}
