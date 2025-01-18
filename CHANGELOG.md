@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.9.1](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.9.0...v2.9.1) (2025-01-18)
+
+
+### 🔥 Bug Fixes
+
+* update provider ([ac272bb](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/ac272bb3f3b881c5e58d316dad8c75c9363b9931))
+
+
+### 📚 Documentation
+
+* **terraform-docs:** generate docs and write to README.adoc ([8d29a23](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/8d29a237bcb68a18aa238187d948337a85a40391))
+
 ## [2.9.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.8.0...v2.9.0) (2025-01-18)
 
 
