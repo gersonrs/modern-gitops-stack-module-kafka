@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.2](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.9.1...v2.9.2) (2025-01-19)
+
+
+### 🔥 Bug Fixes
+
+* update kafka version ([4d9261d](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/4d9261d0955fee784be72e858994adef70a224b6))
+
 ## [2.9.1](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.9.0...v2.9.1) (2025-01-18)
 
 
