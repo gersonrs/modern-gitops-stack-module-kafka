@@ -187,12 +187,12 @@ object({
 
     zookeeper = optional(object({
       requests = optional(object({
-        cpu    = optional(string, "50m")
-        memory = optional(string, "128Mi")
+        cpu    = optional(string, "250m")
+        memory = optional(string, "256Mi")
       }), {})
       limits = optional(object({
-        cpu    = optional(string)
-        memory = optional(string, "128Mi")
+        cpu    = optional(string, "500m")
+        memory = optional(string, "512Mi")
       }), {})
     }), {})
 
@@ -235,9 +235,9 @@ Description: kafka broker name
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
+|[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_argocd]] <<provider_argocd,argocd>> |>= 6
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
-|[[provider_null]] <<provider_null,null>> |>= 3
 |===
 
 = Resources
@@ -385,12 +385,12 @@ object({
 
     zookeeper = optional(object({
       requests = optional(object({
-        cpu    = optional(string, "50m")
-        memory = optional(string, "128Mi")
+        cpu    = optional(string, "250m")
+        memory = optional(string, "256Mi")
       }), {})
       limits = optional(object({
-        cpu    = optional(string)
-        memory = optional(string, "128Mi")
+        cpu    = optional(string, "500m")
+        memory = optional(string, "512Mi")
       }), {})
     }), {})
 
