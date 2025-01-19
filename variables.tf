@@ -116,12 +116,12 @@ variable "resources" {
 
     zookeeper = optional(object({
       requests = optional(object({
-        cpu    = optional(string, "50m")
-        memory = optional(string, "128Mi")
+        cpu    = optional(string, "250m")
+        memory = optional(string, "256Mi")
       }), {})
       limits = optional(object({
-        cpu    = optional(string)
-        memory = optional(string, "128Mi")
+        cpu    = optional(string, "500m")
+        memory = optional(string, "512Mi")
       }), {})
     }), {})
 
