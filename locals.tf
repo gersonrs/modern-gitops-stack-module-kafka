@@ -2,8 +2,8 @@ locals {
   helm_values = [{
     kafka = {
       name            = var.kafka_name
-      version         = "3.6.0"
-      versionProtocol = "3.6"
+      version         = "3.9.0"
+      versionProtocol = "3.9"
       replicas        = var.replicas
       resources = {
         kafka = {
