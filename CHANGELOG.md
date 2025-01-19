@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.10.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.9.2...v2.10.0) (2025-01-19)
+
+
+### 🚀 New Features
+
+* adjust default resources ([e047d4c](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/e047d4c85709d811772ad0d2658a2dac63583162))
+
+
+### 🔥 Bug Fixes
+
+* update kafka version ([4e30df7](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/4e30df7d28f5eb227fbe478b7939493a431fb155))
+
 ## [2.9.2](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.9.1...v2.9.2) (2025-01-19)
 
 
