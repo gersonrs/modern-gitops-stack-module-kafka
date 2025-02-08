@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.1](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.10.0...v2.10.1) (2025-02-08)
+
+
+### ⌨️ Code Refactoring
+
+* adjust workflows ([2440678](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/244067847b5f156a28313a8bbf3c0d6ba94dbfa8))
+
 ## [2.10.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.9.2...v2.10.0) (2025-01-19)
 
 
