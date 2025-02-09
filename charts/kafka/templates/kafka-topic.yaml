@@ -3,7 +3,7 @@
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: {{ .Values.kafka.topic.name }}
+  name: {{ .Values.kafka.name }}-{{ .Values.kafka.topic.name }}
   labels:
     {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
     strimzi.io/cluster: {{ .Values.kafka.name }}
