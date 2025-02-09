@@ -71,6 +71,7 @@ spec:
         configMapKeyRef:
           name: {{ .Values.kafka.name }}-kafka-metrics
           key: kafka-metrics-config.yml
+  {{- if not .Values.kafka.kraft }}
   zookeeper:
     template:
         persistentVolumeClaim:
@@ -102,6 +103,7 @@ spec:
         configMapKeyRef:
           name: {{ .Values.kafka.name }}-zookeeper-metrics
           key: zookeeper-metrics-config.yml
+  {{- end }}
   entityOperator:
     topicOperator: {}
     userOperator: {}
