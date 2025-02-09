@@ -1,0 +1,23 @@
+---
+{{- if .Values.kafka.kraft }}
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaNodePool
+metadata:
+  name: {{ .Values.kafka.name }}-node-pool
+  labels:
+    {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
+    strimzi.io/cluster: {{ .Values.kafka.name }}
+spec:
+  replicas: {{ .Values.kafka.replicas }}
+  roles:
+    - controller
+    - broker
+  storage:
+    type: jbod
+    volumes:
+      - id: 0
+        type: persistent-claim
+        size: {{ .Values.kafka.kraft.storage.size }}
+        kraftMetadata: shared
+        deleteClaim: false
+{{- end }}

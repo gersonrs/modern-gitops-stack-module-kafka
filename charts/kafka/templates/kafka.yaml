@@ -5,8 +5,11 @@ metadata:
   name: {{ .Values.kafka.name }}
   labels:
     {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
+  {{- if .Values.kafka.kraft }}
   annotations:
     strimzi.io/kraft: enabled
+    strimzi.io/node-pools: enabled
+  {{- end }}
 spec:
   kafka:
     template:
