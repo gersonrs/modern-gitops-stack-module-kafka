@@ -2,7 +2,7 @@
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaRebalance
 metadata:
-  name: {{ .Values.kafka.name }}
+  name: {{ .Values.kafka.name }}-rebalance
   labels:
     {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
     strimzi.io/cluster: {{ .Values.kafka.name }}

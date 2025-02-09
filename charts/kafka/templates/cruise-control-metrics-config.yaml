@@ -2,10 +2,10 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: cruise-control-metrics
+  name: {{ .Values.kafka.name }}-cruise-control-metrics
   labels:
     {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
-    app: strimzi
+    strimzi.io/cluster: {{ .Values.kafka.name }}
 data:
   metrics-config.yml: |
     # See https://github.com/prometheus/jmx_exporter for more info about JMX Prometheus Exporter metrics

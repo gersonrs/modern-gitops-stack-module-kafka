@@ -2,10 +2,10 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: kafka-metrics
+  name: {{ .Values.kafka.name }}-kafka-metrics
   labels:
     {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
-    app: strimzi
+    strimzi.io/cluster: {{ .Values.kafka.name }}
 data:
   kafka-metrics-config.yml: |
     # See https://github.com/prometheus/jmx_exporter for more info about JMX Prometheus Exporter metrics

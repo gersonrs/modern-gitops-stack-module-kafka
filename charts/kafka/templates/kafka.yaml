@@ -5,8 +5,11 @@ metadata:
   name: {{ .Values.kafka.name }}
   labels:
     {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
+  {{- if .Values.kafka.kraft }}
   annotations:
     strimzi.io/kraft: enabled
+    strimzi.io/node-pools: enabled
+  {{- end }}
 spec:
   kafka:
     template:
@@ -16,6 +19,7 @@ spec:
               argocd.argoproj.io/compare-options: IgnoreExtraneous
               argocd.argoproj.io/sync-options: Prune=false
     version: {{ .Values.kafka.version }}
+    metadataVersion: {{ .Values.kafka.versionProtocol }}-IV0
     replicas: {{ .Values.kafka.replicas }}
     listeners:
       - name: plain
@@ -65,8 +69,9 @@ spec:
       type: jmxPrometheusExporter
       valueFrom:
         configMapKeyRef:
-          name: kafka-metrics
+          name: {{ .Values.kafka.name }}-kafka-metrics
           key: kafka-metrics-config.yml
+  {{- if not .Values.kafka.kraft }}
   zookeeper:
     template:
         persistentVolumeClaim:
@@ -96,8 +101,9 @@ spec:
       type: jmxPrometheusExporter
       valueFrom:
         configMapKeyRef:
-          name: zookeeper-metrics
+          name: {{ .Values.kafka.name }}-zookeeper-metrics
           key: zookeeper-metrics-config.yml
+  {{- end }}
   entityOperator:
     topicOperator: {}
     userOperator: {}
@@ -106,7 +112,7 @@ spec:
       type: jmxPrometheusExporter
       valueFrom:
         configMapKeyRef:
-          name: cruise-control-metrics
+          name: {{ .Values.kafka.name }}-cruise-control-metrics
           key: metrics-config.yml
   kafkaExporter:
     topicRegex: ".*"
