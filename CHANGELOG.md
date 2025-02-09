@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.11.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.10.2...v2.11.0) (2025-02-09)
+
+
+### 🚀 New Features
+
+* update templates file to adjust kraft mode ([fbbc40a](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/fbbc40a5e98d0e7f70c89434385767986523f66d))
+* update templates file to adjust kraft mode ([93498d2](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/93498d2f93c9fcd5bb35e2e819fdf5a1d6f1b30b))
+* update templates file to adjust kraft mode ([2febb1e](https://github.com/GersonRS/modern-gitops-stack-module-kafka/commit/2febb1e29a56cc12e610d1fb85182adc8bf47738))
+
 ## [2.10.2](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.10.1...v2.10.2) (2025-02-08)
 
 
