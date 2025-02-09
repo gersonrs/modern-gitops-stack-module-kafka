@@ -15,11 +15,11 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
-- [[provider_utils]] <<provider_utils,utils>> (>= 1)
+- [[provider_null]] <<provider_null,null>> (>= 3)
 
 - [[provider_argocd]] <<provider_argocd,argocd>> (>= 6)
 
-- [[provider_null]] <<provider_null,null>> (>= 3)
+- [[provider_utils]] <<provider_utils,utils>> (>= 1)
 
 === Resources
 
@@ -89,7 +89,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.10.2"`
+Default: `"v2.11.0"`
 
 ==== [[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
 
@@ -296,7 +296,7 @@ Description: kafka broker name
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.10.2"`
+|`"v2.11.0"`
 |no
 
 |[[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
