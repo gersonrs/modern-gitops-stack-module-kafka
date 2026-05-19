@@ -128,3 +128,15 @@ variable "resources" {
   })
   default = {}
 }
+
+variable "gateway_name" {
+  description = "Name of the Istio Gateway resource to attach the HTTPRoute to."
+  type        = string
+  default     = "istio-gateway"
+}
+
+variable "gateway_namespace" {
+  description = "Namespace of the Istio Gateway resource."
+  type        = string
+  default     = "istio-ingress"
+}
