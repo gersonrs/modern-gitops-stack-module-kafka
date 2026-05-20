@@ -49,8 +49,10 @@ spec:
       transaction.state.log.min.isr: 1
       default.replication.factor: {{ .Values.kafka.replicas }}
       min.insync.replicas: 1
+      {{- if not .Values.kafka.kraft }}
       log.message.format.version: {{ .Values.kafka.versionProtocol }}
       inter.broker.protocol.version: {{ .Values.kafka.versionProtocol }}
+      {{- end }}
     storage:
       type: jbod
       volumes:
