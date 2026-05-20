@@ -5,6 +5,11 @@ locals {
       version         = "3.9.0"
       versionProtocol = "3.9"
       replicas        = var.replicas
+      kraft = {
+        storage = {
+          size = "5Gi"
+        }
+      }
       resources = {
         kafka = {
           requests = { for k, v in var.resources.kafka.requests : k => v if v != null }
