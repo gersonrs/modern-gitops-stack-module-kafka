@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.12.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v2.11.0...v2.12.0) (2026-05-20)
+
+
+### 🚀 New Features
+
+* add gateway_name and gateway_namespace variables for Istio compatibility ([#22](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/22)) ([ebaafa8](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/ebaafa819f8a8921f3d19d226f8d306ae395cc0d))
+* enable KRaft mode for Strimzi 0.47.0 compatibility ([#23](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/23)) ([d5e8e36](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/d5e8e360795f1cc4f52b8f0375e99e106712ffbe))
+
+
+### 🔥 Bug Fixes
+
+* remove deprecated ZooKeeper config fields from KRaft mode ([#24](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/24)) ([b6e23cd](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/b6e23cd7f474af7d1a859eaea2f8ec59663128e4))
+* update release-please workflow to use PROJECT_APP_PRIVATE_KEY secret ([#21](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/21)) ([b8ffb05](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/b8ffb05660b246dd95016efeeb565287fe88054a))
+
 ## [2.11.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka/compare/v2.10.2...v2.11.0) (2025-02-09)
 
 
