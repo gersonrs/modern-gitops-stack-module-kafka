@@ -88,6 +88,15 @@ variable "kafka_name" {
   nullable    = false
 }
 
+variable "kafka_users" {
+  description = "Kafka SCRAM users to be created by Strimzi for internal clients."
+  type        = list(string)
+  default = [
+    "kafka-ui",
+    "schema-registry",
+  ]
+}
+
 
 variable "replicas" {
   description = "Number of replicas for module"
