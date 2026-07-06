@@ -1,6 +1,6 @@
 ---
 {{- if .Values.kafka.kraft }}
-apiVersion: kafka.strimzi.io/v1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaNodePool
 metadata:
   name: {{ .Values.kafka.name }}-node-pool

@@ -1,6 +1,6 @@
 ---
 {{- if .Values.kafka.topic }}
-apiVersion: kafka.strimzi.io/v1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
   name: {{ .Values.kafka.name }}-{{ .Values.kafka.topic.name }}
