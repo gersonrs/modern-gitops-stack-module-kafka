@@ -1,0 +1,14 @@
+---
+{{- range $user := .Values.kafka.users }}
+apiVersion: kafka.strimzi.io/v1
+kind: KafkaUser
+metadata:
+  name: {{ $user }}
+  labels:
+    {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
+    strimzi.io/cluster: {{ $.Values.kafka.name }}
+spec:
+  authentication:
+    type: scram-sha-512
+---
+{{- end }}

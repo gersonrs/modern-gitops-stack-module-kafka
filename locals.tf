@@ -29,6 +29,7 @@ locals {
         replicas   = 3
         retention  = 7200000
       }
+      users = var.kafka_users
     }
   }]
 }
