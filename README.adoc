@@ -15,11 +15,11 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
-- [[provider_null]] <<provider_null,null>> (>= 3)
+- [[provider_utils]] <<provider_utils,utils>> (>= 1)
 
 - [[provider_argocd]] <<provider_argocd,argocd>> (>= 6)
 
-- [[provider_utils]] <<provider_utils,utils>> (>= 1)
+- [[provider_null]] <<provider_null,null>> (>= 3)
 
 === Resources
 
@@ -89,7 +89,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.12.0"`
+Default: `"v2.13.0"`
 
 ==== [[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
 
@@ -147,6 +147,20 @@ Type: `map(string)`
 
 Default: `{}`
 
+==== [[input_namespace_labels]] <<input_namespace_labels,namespace_labels>>
+
+Description: Labels to apply to the destination namespace managed by Argo CD (requires CreateNamespace=true).
+
+Type: `map(string)`
+
+Default:
+[source,json]
+----
+{
+  "istio.io/dataplane-mode": "ambient"
+}
+----
+
 ==== [[input_kafka_name]] <<input_kafka_name,kafka_name>>
 
 Description: Name of the kafka broker
@@ -154,6 +168,21 @@ Description: Name of the kafka broker
 Type: `string`
 
 Default: `"edh"`
+
+==== [[input_kafka_users]] <<input_kafka_users,kafka_users>>
+
+Description: Kafka SCRAM users to be created by Strimzi for internal clients.
+
+Type: `list(string)`
+
+Default:
+[source,json]
+----
+[
+  "kafka-ui",
+  "schema-registry"
+]
+----
 
 ==== [[input_replicas]] <<input_replicas,replicas>>
 
@@ -312,7 +341,7 @@ Description: kafka broker name
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.12.0"`
+|`"v2.13.0"`
 |no
 
 |[[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
@@ -365,10 +394,39 @@ object({
 |`{}`
 |no
 
+|[[input_namespace_labels]] <<input_namespace_labels,namespace_labels>>
+|Labels to apply to the destination namespace managed by Argo CD (requires CreateNamespace=true).
+|`map(string)`
+|
+
+[source]
+----
+{
+  "istio.io/dataplane-mode": "ambient"
+}
+----
+
+|no
+
 |[[input_kafka_name]] <<input_kafka_name,kafka_name>>
 |Name of the kafka broker
 |`string`
 |`"edh"`
+|no
+
+|[[input_kafka_users]] <<input_kafka_users,kafka_users>>
+|Kafka SCRAM users to be created by Strimzi for internal clients.
+|`list(string)`
+|
+
+[source]
+----
+[
+  "kafka-ui",
+  "schema-registry"
+]
+----
+
 |no
 
 |[[input_replicas]] <<input_replicas,replicas>>

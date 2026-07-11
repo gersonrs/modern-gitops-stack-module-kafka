@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.13.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v2.12.0...v2.13.0) (2026-07-11)
+
+
+### 🚀 New Features
+
+* add namespace_labels variable to all modules ([0399efa](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/0399efa14658a96cf0011e2e15eb9b0041563878))
+* harden kafka broker auth and reliability ([1fafbdb](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/1fafbdbaba5c4e84a20ae07bd5e393f24448f272))
+* harden kafka broker auth and reliability ([16d6847](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/16d6847ffedd2375ae4c744b80cf25eb6f09ca5c))
+
+
+### 🔥 Bug Fixes
+
+* keep strimzi resources on v1beta2 compatibility ([944e829](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/944e829a12c2058d93c2468f8ddd994061ea9423))
+
 ## [2.12.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v2.11.0...v2.12.0) (2026-05-20)
 
 
