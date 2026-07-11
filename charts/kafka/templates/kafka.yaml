@@ -1,5 +1,5 @@
 ---
-apiVersion: kafka.strimzi.io/v1beta2
+apiVersion: kafka.strimzi.io/v1
 kind: Kafka
 metadata:
   name: {{ .Values.kafka.name }}
@@ -26,6 +26,8 @@ spec:
         port: 9092
         type: internal
         tls: false
+        authentication:
+          type: scram-sha-512
       - name: tls
         port: 9093
         type: internal
@@ -33,7 +35,7 @@ spec:
       - name: external
         port: 9094
         type: loadbalancer
-        tls: false
+        tls: true
     readinessProbe:
       initialDelaySeconds: 15
       timeoutSeconds: 5
@@ -46,9 +48,10 @@ spec:
       auto.create.topics.enable: "false"
       offsets.topic.replication.factor: {{ .Values.kafka.replicas }}
       transaction.state.log.replication.factor: {{ .Values.kafka.replicas }}
-      transaction.state.log.min.isr: 1
+      transaction.state.log.min.isr: 2
       default.replication.factor: {{ .Values.kafka.replicas }}
-      min.insync.replicas: 1
+      min.insync.replicas: 2
+      unclean.leader.election.enable: "false"
       {{- if not .Values.kafka.kraft }}
       log.message.format.version: {{ .Values.kafka.versionProtocol }}
       inter.broker.protocol.version: {{ .Values.kafka.versionProtocol }}

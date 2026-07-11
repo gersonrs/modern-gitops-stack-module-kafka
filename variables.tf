@@ -81,11 +81,28 @@ variable "dependency_ids" {
   default     = {}
 }
 
+variable "namespace_labels" {
+  description = "Labels to apply to the destination namespace managed by Argo CD (requires CreateNamespace=true)."
+  type        = map(string)
+  default = {
+    "istio.io/dataplane-mode" = "ambient"
+  }
+}
+
 variable "kafka_name" {
   description = "Name of the kafka broker"
   type        = string
   default     = "edh"
   nullable    = false
+}
+
+variable "kafka_users" {
+  description = "Kafka SCRAM users to be created by Strimzi for internal clients."
+  type        = list(string)
+  default = [
+    "kafka-ui",
+    "schema-registry",
+  ]
 }
 
 
