@@ -89,7 +89,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.6.0"`
+Default: `"v2.12.0"`
 
 ==== [[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
 
@@ -201,6 +201,22 @@ object({
 
 Default: `{}`
 
+==== [[input_gateway_name]] <<input_gateway_name,gateway_name>>
+
+Description: Name of the Istio Gateway resource to attach the HTTPRoute to.
+
+Type: `string`
+
+Default: `"istio-gateway"`
+
+==== [[input_gateway_namespace]] <<input_gateway_namespace,gateway_namespace>>
+
+Description: Namespace of the Istio Gateway resource.
+
+Type: `string`
+
+Default: `"istio-ingress"`
+
 === Outputs
 
 The following outputs are exported:
@@ -296,7 +312,7 @@ Description: kafka broker name
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.6.0"`
+|`"v2.12.0"`
 |no
 
 |[[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
@@ -398,6 +414,18 @@ object({
 ----
 
 |`{}`
+|no
+
+|[[input_gateway_name]] <<input_gateway_name,gateway_name>>
+|Name of the Istio Gateway resource to attach the HTTPRoute to.
+|`string`
+|`"istio-gateway"`
+|no
+
+|[[input_gateway_namespace]] <<input_gateway_namespace,gateway_namespace>>
+|Namespace of the Istio Gateway resource.
+|`string`
+|`"istio-ingress"`
 |no
 
 |===
