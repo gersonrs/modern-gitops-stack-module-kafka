@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.1...v3.0.2) (2026-11-21)
+
+
+### 🔥 Bug Fixes
+
+* open HBONE port so the KRaft quorum can form ([#33](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/33)) ([a4a8dfa](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/a4a8dfa78ed34ebaeeaf57d957ea40be937fb24d))
+
 ## [3.0.1](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.0...v3.0.1) (2026-11-21)
 
 
