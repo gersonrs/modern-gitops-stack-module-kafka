@@ -1,0 +1,30 @@
+{{- if .Values.kafka.kraft }}
+{{- /*
+  Istio ambient mode tunnels mesh traffic between pods over HBONE on port
+  15008. Strimzi's own NetworkPolicy only allows the Kafka/controller ports,
+  and NetworkPolicy is enforced on the host, outside the pod, so the
+  HBONE-encapsulated connection from the KRaft peers is dropped before it
+  reaches the broker and the quorum never forms.
+
+  NetworkPolicies are additive, so this policy opens 15008 for the broker
+  pods without touching the Strimzi-managed one.
+  See: https://istio.io/latest/docs/ambient/usage/networkpolicy/
+*/}}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ .Values.kafka.name }}-hbone-ingress
+  labels:
+    {{- include "modern-gitops-stack-module-kafka.labels" $ | indent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      strimzi.io/cluster: {{ .Values.kafka.name }}
+      strimzi.io/kind: Kafka
+  policyTypes:
+    - Ingress
+  ingress:
+    - ports:
+        - port: 15008
+          protocol: TCP
+{{- end }}
