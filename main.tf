@@ -51,27 +51,27 @@ resource "argocd_application" "this" {
 
   wait = var.app_autosync == { "allow_empty" = tobool(null), "prune" = tobool(null), "self_heal" = tobool(null) } ? false : true
 
-  # Strimzi fills the Kafka CR with defaults it derives from the node pools
-  # (replicas, storage, listeners) and records them in the spec, so the live
-  # object never matches the rendered manifest and the app stays OutOfSync
-  # forever even though the cluster is Ready.
-  ignore_differences {
-    group = "kafka.strimzi.io"
-    kind  = "Kafka"
-    json_pointers = [
-      "/spec/kafka/replicas",
-      "/spec/kafka/storage",
-      "/spec/kafka/listeners",
-      "/spec/kafka/config",
-      "/spec/zookeeper",
-      "/spec/entityOperator",
-      "/spec/cruiseControl",
-      "/spec/kafkaExporter",
-    ]
-  }
-
   spec {
     project = var.argocd_project == null ? argocd_project.this[0].metadata.0.name : var.argocd_project
+
+    # Strimzi fills the Kafka CR with defaults derived from the node pools
+    # (replicas, storage, listeners, config) and records them in the spec, so
+    # the live object never matches the rendered manifest and the app stays
+    # OutOfSync even though the cluster is Ready.
+    ignore_difference {
+      group = "kafka.strimzi.io"
+      kind  = "Kafka"
+      json_pointers = [
+        "/spec/kafka/replicas",
+        "/spec/kafka/storage",
+        "/spec/kafka/listeners",
+        "/spec/kafka/config",
+        "/spec/zookeeper",
+        "/spec/entityOperator",
+        "/spec/cruiseControl",
+        "/spec/kafkaExporter",
+      ]
+    }
 
     source {
       repo_url        = "https://github.com/GersonRS/modern-gitops-stack-module-kafka.git"
