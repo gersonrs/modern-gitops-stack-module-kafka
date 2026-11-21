@@ -12,6 +12,24 @@ locals {
           size = "5Gi"
         }
       }
+      # The brokers start a JVM, format the KRaft metadata log and elect a
+      # controller before /opt/kafka/kafka_liveness.sh succeeds. On a loaded
+      # kind node the chart default (15s initial delay, 3 failures) SIGTERMs
+      # the pod mid-startup (exit 143) and it never becomes ready.
+      probes = {
+        liveness = {
+          initialDelaySeconds = 180
+          failureThreshold    = 10
+          periodSeconds       = 30
+          timeoutSeconds      = 15
+        }
+        readiness = {
+          initialDelaySeconds = 180
+          failureThreshold    = 10
+          periodSeconds       = 30
+          timeoutSeconds      = 15
+        }
+      }
       resources = {
         kafka = {
           requests = { for k, v in var.resources.kafka.requests : k => v if v != null }

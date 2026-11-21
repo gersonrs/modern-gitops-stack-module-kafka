@@ -13,11 +13,23 @@ metadata:
 spec:
   kafka:
     template:
-        persistentVolumeClaim:
-          metadata:
-            annotations:
-              argocd.argoproj.io/compare-options: IgnoreExtraneous
-              argocd.argoproj.io/sync-options: Prune=false
+      persistentVolumeClaim:
+        metadata:
+          annotations:
+            argocd.argoproj.io/compare-options: IgnoreExtraneous
+            argocd.argoproj.io/sync-options: Prune=false
+    {{- with .Values.kafka.probes }}
+    livenessProbe:
+      initialDelaySeconds: {{ .liveness.initialDelaySeconds }}
+      failureThreshold: {{ .liveness.failureThreshold }}
+      periodSeconds: {{ .liveness.periodSeconds }}
+      timeoutSeconds: {{ .liveness.timeoutSeconds }}
+    readinessProbe:
+      initialDelaySeconds: {{ .readiness.initialDelaySeconds }}
+      failureThreshold: {{ .readiness.failureThreshold }}
+      periodSeconds: {{ .readiness.periodSeconds }}
+      timeoutSeconds: {{ .readiness.timeoutSeconds }}
+    {{- end }}
     version: {{ .Values.kafka.version }}
     metadataVersion: {{ .Values.kafka.versionProtocol }}-IV0
     replicas: {{ .Values.kafka.replicas }}
