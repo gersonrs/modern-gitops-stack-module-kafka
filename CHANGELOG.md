@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.5](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.4...v3.0.5) (2026-11-21)
+
+
+### 🔥 Bug Fixes
+
+* ignore the defaults Strimzi writes into the Kafka CR ([#39](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/39)) ([e70fc53](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/e70fc53a08625f12b70ac6e2f60922e86573ad57))
+
 ## [3.0.4](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.3...v3.0.4) (2026-11-21)
 
 
