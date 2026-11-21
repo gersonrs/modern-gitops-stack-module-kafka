@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.3](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.2...v3.0.3) (2026-11-21)
+
+
+### 🔥 Bug Fixes
+
+* give the brokers time to start before probes fail ([#35](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/35)) ([45032bb](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/45032bb8e6f24c6014a02f09c174a0260b300b38))
+
 ## [3.0.2](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.1...v3.0.2) (2026-11-21)
 
 
