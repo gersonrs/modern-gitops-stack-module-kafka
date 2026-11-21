@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.0...v3.0.1) (2026-11-21)
+
+
+### 🔥 Bug Fixes
+
+* run Kafka 4.3.2 required by Strimzi 1.3 ([#31](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/31)) ([fb4597f](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/fb4597f8f8d99f1ed01bc34727a080790691f7b0))
+
 ## [3.0.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v2.13.0...v3.0.0) (2026-11-20)
 
 
