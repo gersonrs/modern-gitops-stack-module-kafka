@@ -29,10 +29,19 @@ spec:
       failureThreshold: {{ .readiness.failureThreshold }}
       periodSeconds: {{ .readiness.periodSeconds }}
       timeoutSeconds: {{ .readiness.timeoutSeconds }}
+    {{- else }}
+    readinessProbe:
+      initialDelaySeconds: 15
+      timeoutSeconds: 5
+    livenessProbe:
+      initialDelaySeconds: 15
+      timeoutSeconds: 5
     {{- end }}
     version: {{ .Values.kafka.version }}
     metadataVersion: {{ .Values.kafka.versionProtocol }}-IV0
+    {{- if not .Values.kafka.kraft }}
     replicas: {{ .Values.kafka.replicas }}
+    {{- end }}
     listeners:
       - name: plain
         port: 9092
@@ -48,12 +57,6 @@ spec:
         port: 9094
         type: loadbalancer
         tls: true
-    readinessProbe:
-      initialDelaySeconds: 15
-      timeoutSeconds: 5
-    livenessProbe:
-      initialDelaySeconds: 15
-      timeoutSeconds: 5
     config:
     # Report and UI for Cruise Control
       metric.reporters: "com.linkedin.kafka.cruisecontrol.metricsreporter.CruiseControlMetricsReporter"
@@ -68,6 +71,7 @@ spec:
       log.message.format.version: {{ .Values.kafka.versionProtocol }}
       inter.broker.protocol.version: {{ .Values.kafka.versionProtocol }}
       {{- end }}
+    {{- if not .Values.kafka.kraft }}
     storage:
       type: jbod
       volumes:
@@ -82,6 +86,7 @@ spec:
       limits:
         memory: {{ .Values.kafka.resources.kafka.limits.memory }}
         cpu: {{ .Values.kafka.resources.kafka.limits.cpu }}
+    {{- end }}
     metricsConfig:
       type: jmxPrometheusExporter
       valueFrom:

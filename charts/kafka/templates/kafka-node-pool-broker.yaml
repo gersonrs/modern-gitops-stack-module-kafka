@@ -20,4 +20,15 @@ spec:
         size: {{ .Values.kafka.kraft.storage.size }}
         kraftMetadata: shared
         deleteClaim: false
+  {{- with .Values.kafka.resources.kafka }}
+  resources:
+    {{- with .requests }}
+    requests:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    {{- with .limits }}
+    limits:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+  {{- end }}
 {{- end }}
