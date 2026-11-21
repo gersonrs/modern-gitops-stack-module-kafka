@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.6](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.5...v3.0.6) (2026-11-21)
+
+
+### 🔥 Bug Fixes
+
+* honour kafka probes and broker resources under kraft ([#41](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/41)) ([1fc14db](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/1fc14db25c59cf0cbf26929728884217c686ebc5))
+
 ## [3.0.5](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.4...v3.0.5) (2026-11-21)
 
 
