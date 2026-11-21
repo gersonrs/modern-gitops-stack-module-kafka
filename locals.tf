@@ -1,9 +1,11 @@
 locals {
   helm_values = [{
     kafka = {
-      name            = var.kafka_name
-      version         = "3.9.0"
-      versionProtocol = "3.9"
+      name = var.kafka_name
+      # Strimzi 1.3.x supports Kafka 4.2+ only. Kafka 4 removed ZooKeeper, so
+      # the KRaft mode below is mandatory for this version.
+      version         = "4.3.2"
+      versionProtocol = "4.3"
       replicas        = var.replicas
       kraft = {
         storage = {
