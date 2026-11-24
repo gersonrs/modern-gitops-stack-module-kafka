@@ -1,5 +1,40 @@
 = modern-gitops-stack-module-kafka
 
+A https://modern-gitops-stack.io[Modern GitOps Stack] module to deploy Apache Kafka, managed by Strimzi, as the event streaming backbone of the data platform.
+
+The `kafka` chart is authored inside this repository rather than depending on an upstream chart, so the manifests track the custom resources this module needs.
+
+== Usage
+
+This module can be declared by adding the following block to your Terraform configuration:
+
+[source,terraform]
+----
+module "kafka" {
+  source = "git::https://github.com/GersonRS/modern-gitops-stack-module-kafka.git?ref=<RELEASE>"
+
+  cluster_name   = local.cluster_name
+  base_domain    = local.base_domain
+  subdomain      = local.subdomain
+  cluster_issuer = local.cluster_issuer
+  app_autosync   = local.app_autosync
+
+  dependency_ids = {
+    strimzi = module.strimzi.id
+  }
+}
+----
+
+The application is deployed to the `ingestion` namespace.
+
+== Technical Reference
+
+=== Dependencies
+
+==== `module.strimzi.id`
+
+The Kafka cluster is a Strimzi custom resource.
+
 // BEGIN_TF_DOCS
 === Requirements
 
