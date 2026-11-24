@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.7](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.6...v3.0.7) (2026-11-24)
+
+
+### 📚 Documentation
+
+* add usage and dependencies to the module documentation ([#43](https://github.com/gersonrs/modern-gitops-stack-module-kafka/issues/43)) ([4053827](https://github.com/gersonrs/modern-gitops-stack-module-kafka/commit/40538277967dfc5033edf1664d402b3ef5f1e70b))
+
 ## [3.0.6](https://github.com/gersonrs/modern-gitops-stack-module-kafka/compare/v3.0.5...v3.0.6) (2026-11-21)
 
 
